@@ -8,7 +8,7 @@ const client = new Client()
   .setEndpoint("https://cloud.appwrite.io/v1")
   .setProject(PROJECT_ID);
 
-const database = new Databases(client)
+const database = new Databases(client);
 
 export const updateSearchCount = async (searchTerm, movie) => {
   try {
@@ -34,13 +34,15 @@ export const updateSearchCount = async (searchTerm, movie) => {
   }
 };
 
-// console.log(PROJECT_ID, DATABASE_ID, COLLECTION_ID);
 export const getTrendingMovies = async () => {
   try {
     const result = await database.listDocuments(DATABASE_ID, COLLECTION_ID, [
       Query.limit(5),
       // Query.orderDesc("count"),
     ]);
+    // console.log(`result :::: `);
+    // console.log(result.documents.length);
+    // console.log(result.documents);
 
     return result.documents;
   } catch (error) {
