@@ -4,7 +4,7 @@ import "./index.css";
 import Spinner from "./Components/Spinner";
 import { toast } from "react-toastify";
 import { useDebounce } from "react-use";
-import { getTrendingMovies, updateSearchCount } from "./appwrite";
+import { getTrendingMovies, updateSearchCount } from "./appwrite.js";
 import MoiveCard from "./Components/MoiveCard";
 
 const API_BASE_URL = "https://api.themoviedb.org/3";
@@ -117,8 +117,7 @@ const App = () => {
             <ul>
               {movieList.map((movie) => (
                 <li>
-                  <MoiveCard   key={movie.id} movie={movie} />
-                    
+                  <MoiveCard key={movie.id} movie={movie} />
                 </li>
               ))}
             </ul>
