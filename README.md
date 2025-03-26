@@ -32,15 +32,13 @@ npm install
 
 Start the development server:
 
-npm start
+npm run dev
 
 Technologies Used
 
 React (Frontend)
 
 Node.js & Express (Backend)
-
-MongoDB (Database)
 
 TMDB API for movie data
 
