@@ -40,9 +40,9 @@ export const getTrendingMovies = async () => {
       Query.limit(5),
       // Query.orderDesc("count"),
     ]);
-    // console.log(`result :::: `);
-    // console.log(result.documents.length);
-    // console.log(result.documents);
+    console.log(`result :::: `);
+    console.log(result.documents.length);
+    console.log(result.documents);
 
     return result.documents;
   } catch (error) {
