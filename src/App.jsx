@@ -4,7 +4,7 @@ import "./index.css";
 import Spinner from "./Components/Spinner";
 import { toast } from "react-toastify";
 import { useDebounce } from "react-use";
-import { getTrendingMovies, updateSearchCount } from "./appwrite";
+import { getTrendingMovies, updateSearchCount } from "./appwrite.js";
 import MoiveCard from "./Components/MoiveCard";
 
 const API_BASE_URL = "https://api.themoviedb.org/3";
@@ -24,7 +24,7 @@ const App = () => {
   const [movieList, setMovieList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  // const [trendingMovies, setTrendingMovies] = useState([]);
+  const [trendingMovies, setTrendingMovies] = useState([]);
   // debounce the search term to prevent many API request
   // by waiting for the user to stop typing  for 500ms
   useDebounce(() => setDebouncedSearchTerm(searchTerm), 500, [searchTerm]);
@@ -117,8 +117,7 @@ const App = () => {
             <ul>
               {movieList.map((movie) => (
                 <li>
-                  <MoiveCard   key={movie.id} movie={movie} />
-                    
+                  <MoiveCard key={movie.id} movie={movie} />
                 </li>
               ))}
             </ul>
